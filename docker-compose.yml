@@ -1,0 +1,44 @@
+version: '3'
+ 
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    build:
+      context: ./
+      dockerfile: docker/db/Dockerfile
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "biel"
+  gabsite:
+    depends_on:
+      - mysql
+    image: gabsite
+    container_name: gabsite
+    build:
+      context: ./
+      dockerfile: docker/web/Dockerfile
+    ports:
+      - 80:80
+    environment:
+      DB_HOSTNAME: "172.17.0.2"
+      DB_USER: "root"
+      DB_PASSWORD: "biel"
+      DB_NAME: "login"
+    volumes:
+      - ./../../www:/var/www/site
+    links:
+      - mysql:mysql
+    restart: always
+    networks:
+      - gabsite_mysql_net
+ 
+volumes:
+  mysql_data:
+  www:  
+  
+ 
+networks:
+  gabsite_mysql_net:
+    driver: bridge
