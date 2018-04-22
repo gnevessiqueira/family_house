@@ -10,7 +10,7 @@ if($_SESSION['login'] == false) {
 }
 
 ?>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home</title>
@@ -18,7 +18,7 @@ if($_SESSION['login'] == false) {
 </head>
 <body>
     <div class="logout">
-    <a href="login.php?cmd=logout">Logout</a>
+    <a href="login.php?cmd=logout">Logout aqui</a>
 </div>    <br><br><br>
     <h1> Welcome  <?php echo $_SESSION['name'];?> </h1>  
 </body>
