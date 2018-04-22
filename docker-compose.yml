@@ -2,15 +2,13 @@ version: '3'
  
 services:
   mysql:
-    image: mysql
+    image: mysql:5.7
     container_name: mysql
-    build:
-      context: ./
-      dockerfile: docker/db/Dockerfile
+    restart: always
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: "biel"
+       MYSQL_ROOT_PASSWORD: "biel"
   gabsite:
     depends_on:
       - mysql
@@ -35,7 +33,6 @@ services:
       - gabsite_mysql_net
  
 volumes:
-  mysql_data:
   www:  
   
  

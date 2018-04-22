@@ -10,3 +10,5 @@ docker inspect -f '{{ .NetworkSettings.IPAddress }}' 283e14cbaa10
 
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
 
+docker run -it mysql bash
+
