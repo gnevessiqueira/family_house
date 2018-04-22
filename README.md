@@ -1,3 +1,12 @@
+- Whenever we want to save the database image:
+docker commit mysql
+
+- Detroying Containers
+docker-compose down
+
+- Loading docker compose file
+docker compose up
+
 //Creating Docker Image
 docker build -t "gabsite:latest" .
 
@@ -11,4 +20,7 @@ docker inspect -f '{{ .NetworkSettings.IPAddress }}' 283e14cbaa10
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
 
 docker exec -it gabsite bash
+
+
+
 

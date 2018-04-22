@@ -20,6 +20,10 @@ if($_SESSION['login'] == false) {
     <div class="logout">
     <a href="login.php?cmd=logout">Logout aqui</a>
 </div>    <br><br><br>
-    <h1> Welcome  <?php echo $_SESSION['name'];?> </h1>  
+<?php if($_SESSION['roles'] == 'admin') { ?>
+    <h1> Welcome my Administrator!! Your name is <?php echo ucwords($_SESSION['name']);?> </h1>  
+<?php } else { ?>
+    <h1> Welcome  <?php echo ucwords($_SESSION['name']);?> </h1>  
+<?php } ?>
 </body>
 </html>

@@ -47,6 +47,7 @@ error_reporting(E_ALL);
         $_SESSION['login'] = true;
         $_SESSION['username'] = $row['username'];
         $_SESSION['name'] = $row['name'];
+        $_SESSION['roles'] = $row['roles'];
         header("Location: home.php");
         
     } else {
