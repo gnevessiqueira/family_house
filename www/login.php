@@ -37,7 +37,7 @@ if(isset($_GET['error']) && $_GET['error']== "1") {
                     <a href="#">Forget Password</a>
                     <br><br>
                     Dont have an account? 
-                    <a href="#">Sign up</a>
+                    <a href="sign up.php">Sign up</a>
                 </form>
 
         </div>
